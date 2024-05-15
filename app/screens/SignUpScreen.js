@@ -30,7 +30,7 @@ const SignInScreen = ({navigation}) => {
     confirm_secureTextEntry: true,
   });
 
-  const {signIn} = React.useContext(AuthContext);
+  const {signUp} = React.useContext(AuthContext);
 
   const textInputChange = (val) => {
     if (val.length != 0) {

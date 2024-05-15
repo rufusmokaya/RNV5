@@ -4,8 +4,8 @@ import { View, Text, Button, StyleSheet } from 'react-native';
 const DetailsScreen =({navigation}) => {
     return (
        <View style={styles.container}>
-         <Text>Detail Screen</Text>
-         <Button
+         <Text>This is where all the notifications will appear</Text>
+         {/* <Button
             title="Go to details screen...again"
             onPress={() => navigation.push("Details")}/>
          <Button
@@ -16,7 +16,7 @@ const DetailsScreen =({navigation}) => {
             onPress={() => navigation.goBack()}/>
          <Button
             title="Go to the first screen"
-            onPress={() => navigation.popToTop()}/>
+            onPress={() => navigation.popToTop()}/> */}
        </View>
     );
   };

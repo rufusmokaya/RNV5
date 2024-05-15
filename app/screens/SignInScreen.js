@@ -15,15 +15,20 @@ import {
 import * as Animatable from "react-native-animatable";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Feather from "react-native-vector-icons/Feather";
+import { AuthContext } from "../components/context";
 //import LinearGradient from "react-native-linear-gradient";
 
 const SignInScreen = ({ navigation }) => {
+
   const [data, setData] = React.useState({
     email: "",
     password: "",
     check_textInputChange: false,
     secureTextEntry: true,
   });
+
+  const {signIn} = React.useContext(AuthContext);
+
   const textInputChange = (val) => {
     if (val.length != 0) {
       setData({
@@ -54,10 +59,14 @@ const SignInScreen = ({ navigation }) => {
     });
   };
 
+  const loginHandle = (userName, password) => {
+    signIn(username, password);
+  }
+
   return (
     <View style={styles.container}>
       
-      <StatusBar backgroundColor='#009387' barStyle="light-content"/>
+      <StatusBar backgroundColor='#7D0552' barStyle="light-content"/>
       
       <View style={styles.header}>
         <Text style={styles.text_header}>Welcome!</Text>
@@ -82,6 +91,7 @@ const SignInScreen = ({ navigation }) => {
         </View>
 
         <Text style={[styles.text_footer, { marginTop: 35 }]}>Password</Text>
+
         <View style={styles.action}>
           <Feather name="lock" color="#05375a" size={20} />
           <TextInput placeholder="Your Password" secureTextEntry={data.secureTextEntry ? true : false} style={styles.passInput} autoCapitalize="none" onChangeText={(val) => handlePasswordChange(val)}/>
@@ -93,11 +103,14 @@ const SignInScreen = ({ navigation }) => {
             )}
           </TouchableOpacity>
         </View>
+
+        <TouchableOpacity>
+          <Text style={{color:'#a32286', marginTop:15}}>Forgot Pasword?</Text>
+        </TouchableOpacity>
+
         <View style={styles.button}>
-          {/* <LinearGradient  colors={['#08d4c4', '#01ab9d']} style={styles.signIn}>
-                <Text styles ={styles.signIn}>Sign In</Text>
-            </LinearGradient> */}
-          <TouchableOpacity style={styles.signIn}>
+          
+          <TouchableOpacity style={styles.signIn} onPress={() => {loginHandle( data.username, data.password)}}>
             <Text style={[styles.textSign, { color: "#fff" }]}>Sign In</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -212,3 +225,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+
+{/* <LinearGradient  colors={['#08d4c4', '#01ab9d']} style={styles.signIn}>
+                <Text styles ={styles.signIn}>Sign In</Text>
+            </LinearGradient> */}

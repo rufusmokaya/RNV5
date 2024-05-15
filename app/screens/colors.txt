@@ -1,0 +1,5 @@
+Main color - #7D0552 / #a32286
+
+backgroundColor: '#E8EAED'
+
+'#05375a'  complementary is #592805.
