@@ -1,26 +1,16 @@
-import React from 'react';
-import { View, Text, Button, StyleSheet} from 'react-native';
-import {
-    Avatar,
-    Title,
-    Caption,
-    Paragraph,
-    Drawer,
-    TouchableRipple,
-    Switch
-} from 'react-native-paper';
+import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { Avatar, Title, Caption, Paragraph, Drawer, TouchableRipple, Switch } from 'react-native-paper';
 
-const ProfileScreen = () => {
-        return(
-            <View style={styles.container}>
-               
-                <Text> This is where student information will be</Text>
-                
+const TimtableScreen = () => {
+  return (
+    <View style={styles.container}>
+                <Text> This is where the Timetable will be</Text>
             </View>
-        );
-};
+  )
+}
 
-export default ProfileScreen;
+export default TimtableScreen
 
 const styles = StyleSheet.create({
     container: {

@@ -18,6 +18,9 @@ import MainTabScreen from './app/screens/MainTabScreen';
 import SupportScreen from './app/screens/SupportScreen';
 import BookmarkScreen from './app/screens/BookmarkScreen';
 import SettingsScreen from './app/screens/SettingsScreen';
+import FeeScreen from './app/screens/FeeScreen';
+import TimtableScreen from './app/screens/TimtableScreen';
+
 
 
 
@@ -114,6 +117,8 @@ const App = () => {
           <Drawer.Screen name="SupportScreen" component={SupportScreen} options = {{headerShown: false}}/>
           <Drawer.Screen name="SettingsScreen" component={SettingsScreen} options = {{headerShown: false}}/>
           <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} options = {{headerShown: false}}/>
+          <Drawer.Screen name="FeeScreen" component={FeeScreen} options = {{headerShown: false}}/>
+          <Drawer.Screen name="TimtableScreen" component={TimtableScreen} options = {{headerShown: false}}/>
         </Drawer.Navigator>
       )
     :

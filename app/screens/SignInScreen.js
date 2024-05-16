@@ -59,7 +59,7 @@ const SignInScreen = ({ navigation }) => {
     });
   };
 
-  const loginHandle = (userName, password) => {
+  const loginHandle = (username, password) => {
     signIn(username, password);
   }
 
